@@ -60,7 +60,7 @@ def cfg():
 
     elif mode == 'test':
         notrain = False
-        snapshot = './runs/PANet_VOC_sets_0_1way_1shot_[train]/1/snapshots/30000.pth'
+        snapshot = './runs/PANet_VOC_align_sets_0_1way_1shot_[train]/1/snapshots/30000.pth'
         n_runs = 5
         n_steps = 1000
         batch_size = 1
@@ -104,7 +104,7 @@ def cfg():
     path = {
         'log_dir': './runs',
         'init_path': './pretrained_model/vgg16-397923af.pth',
-        'VOC':{'data_dir': '../../data/Pascal/VOCdevkit/VOC2012/',
+        'VOC':{'data_dir': './data/VOCdevkit/VOC2012/',
                'data_split': 'trainaug',},
         'COCO':{'data_dir': '../../data/COCO/',
                 'data_split': 'train',},
