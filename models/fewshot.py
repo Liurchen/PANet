@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from .vgg import Encoder
+fm .vgg import Encoder
 
 
 class FewShotSeg(nn.Module):
@@ -176,6 +176,7 @@ class FewShotSeg(nn.Module):
             # Get the query prototypes
             prototypes = [qry_prototypes[[0]], qry_prototypes[[way + 1]]]
             for shot in range(n_shots):
+                
                 img_fts = supp_fts[way, [shot]]
                 supp_dist = [self.calDist(img_fts, prototype) for prototype in prototypes]
                 supp_pred = torch.stack(supp_dist, dim=1)
